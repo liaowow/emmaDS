@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
 import { animated, useTransition } from "react-spring";
 
@@ -12,19 +13,29 @@ import { animated, useTransition } from "react-spring";
 
 const EmojiCarousel = () => {
   // Add happy state here
-
+  const [happy, setHappy] = useState(true);
   // Add transition here
-
+  const transition = useTransition(happy, null, {
+    from: { opacity: 0, position: "absolute" },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  })
   return (
     <div className="emoji-carousel">
-      <button>Make happy</button>
-      {/* Refactor this and add transitions */}
-      <span role="img" aria-label="Happy">
-        😀
-      </span>
-      <span role="img" aria-label="Sad">
-        😭
-      </span>
+      <button onClick={() => setHappy(!happy)}>Make happy</button>
+      {
+        transition.map(({ item, props }) => {
+          return item ? (
+            <animated.span style={props} role="img" aria-label="Happy">
+              😀
+            </animated.span>
+          ) : (
+            <animated.span style={props} role="img" aria-label="Sad">
+              😭
+            </animated.span>
+          )
+        })
+      }
     </div>
   );
 };

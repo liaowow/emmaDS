@@ -6,6 +6,7 @@ import { SignUpModal } from './components';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 import "./styles.css";
 import FadeIn from './FadeIn';
+import EmojiCarousel from './EmojiCarousel';
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
       <FadeIn />
+      <EmojiCarousel />
       <button 
         style={{ margin: "0 16px 24px", padding: "8px", background: "none"}}
         onClick={() => setUseDarkTheme(true)}
