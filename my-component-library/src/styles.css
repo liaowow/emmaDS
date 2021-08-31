@@ -1,4 +1,4 @@
-.App {
+/* .App {
   font-family: sans-serif;
   text-align: center;
   display: flex;
@@ -6,9 +6,9 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-}
+} */
 
-button {
+.animate-btn {
   padding: 16px;
   font-size: 1em;
   border: none;

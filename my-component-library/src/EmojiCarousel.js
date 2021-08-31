@@ -22,7 +22,7 @@ const EmojiCarousel = () => {
   })
   return (
     <div className="emoji-carousel">
-      <button onClick={() => setHappy(!happy)}>Make happy</button>
+      <button className="animate-btn" onClick={() => setHappy(!happy)}>Make happy</button>
       {
         transition.map(({ item, props }) => {
           return item ? (

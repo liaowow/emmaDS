@@ -18,7 +18,7 @@ const FadeIn = () => {
   
   return (
     <div>
-      <button onClick={() => setShowText(!showText)}>Toggle animation</button>
+      <button className="animate-btn" onClick={() => setShowText(!showText)}>Toggle animation</button>
       <animated.p style={animation}>Animate me on click!</animated.p>
     </div>
   );
