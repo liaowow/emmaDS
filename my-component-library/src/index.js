@@ -4,19 +4,18 @@ import { ThemeProvider } from 'styled-components';
 import { PrimaryButton, SecondaryButton, TertiaryButton } from './components/Buttons';
 import { SignUpModal } from './components';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
-import "./styles.css";
-import FadeIn from './FadeIn';
-import EmojiCarousel from './EmojiCarousel';
+// import "./styles.css";
+// import FadeIn from './FadeIn';
+// import EmojiCarousel from './EmojiCarousel';
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
-
-
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-      <FadeIn />
-      <EmojiCarousel />
+      {/* <FadeIn />
+      <EmojiCarousel /> */}
       <button 
         style={{ margin: "0 16px 24px", padding: "8px", background: "none"}}
         onClick={() => setUseDarkTheme(true)}
@@ -29,6 +28,12 @@ const App = () => {
       >
         Default Theme
       </button>
+      <button 
+        style={{ margin: "0 16px 24px", padding: "8px", background: "none"}}
+        onClick={() => setShowModal(!showModal)}
+      >
+        Toggle Modal
+      </button>
       <div style={{
         background: useDarkTheme ? defaultTheme.primaryColor : darkTheme.primaryColor,
         width: "100vw",
@@ -37,7 +42,7 @@ const App = () => {
         alignItems: "center",
         justifyContent: "space-around"
       }}>
-        <SignUpModal />
+        <SignUpModal showModal={showModal} setShowModal={setShowModal} />
       </div>
       <div>
         <PrimaryButton modifiers={["small", "warning"]}>Warning!</PrimaryButton>
