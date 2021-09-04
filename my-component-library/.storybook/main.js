@@ -4,6 +4,7 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
+    "@storybook/addon-backgrounds",
     "@storybook/addon-links",
     "@storybook/addon-actions",
     "@storybook/addon-essentials",
@@ -15,6 +16,5 @@ module.exports = {
       }
     },
     "@storybook/addon-contexts/register",
-    "@storybook/addon-backgrounds"
   ]
 }
