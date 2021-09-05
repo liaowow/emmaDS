@@ -17,5 +17,6 @@ module.exports = {
     },
     "@storybook/addon-contexts/register",
     "@storybook/addon-knobs",
+    "@storybook/addon-a11y",
   ]
 }
